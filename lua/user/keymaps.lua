@@ -1,6 +1,13 @@
 local keymap = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
+-- Save file with Ctrl + S
+keymap("n", "<C-s>", "<cmd>w<CR>", opts)
+
+-- Undo with Ctrl + Z
+keymap("n", "<C-z>", "<cmd>u<CR>", opts)
+
+
 keymap("n", "<Space>", "", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "

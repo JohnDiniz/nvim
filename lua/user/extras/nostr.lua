@@ -1,5 +1,6 @@
 local M = {
-  url = "git@github.com:ChristianChiarulli/nostr.nvim.git",
+  -- url = "git@github.com:ChristianChiarulli/nostr.nvim.git",
+  url = "https://github.com/ChristianChiarulli/nostr.nvim.git",
   dependencies = {
     "MunifTanjim/nui.nvim",
   },
