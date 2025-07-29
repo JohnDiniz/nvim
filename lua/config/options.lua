@@ -2,7 +2,7 @@ local opt = vim.opt
 
 opt.backup = false -- creates a backup file
 opt.clipboard = "unnamedplus" -- allows neovim to access the system clipboard
-opt.cmdheight = 1 -- more space in the neovim command line for displaying messages
+opt.cmdheight = 0 -- more space in the neovim command line for displaying messages
 opt.completeopt = { "menuone", "noselect" } -- mostly just for cmp
 opt.conceallevel = 0 -- so that `` is visible in markdown files
 opt.winborder = "rounded"
@@ -40,7 +40,7 @@ opt.wrap = false -- display lines as one long line
 opt.scrolloff = 0
 opt.sidescrolloff = 8
 opt.guifont = "monospace:h17" -- the font used in graphical neovim applications
-opt.title = true
+opt.title = false
 opt.titlelen = 0 -- do not shorten title
 -- colorcolumn = "80",
 -- colorcolumn = "120",
@@ -56,3 +56,10 @@ opt.iskeyword:append("-")
 
 vim.g.netrw_banner = 0
 vim.g.netrw_mouse = 2
+
+vim.cmd([[
+  augroup RestoreCursorShapeOnExit
+      autocmd!
+      autocmd VimLeave * set guicursor=a:ver25
+  augroup END
+]])
